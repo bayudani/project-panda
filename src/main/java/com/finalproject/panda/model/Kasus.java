@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name = "kasus")
 public class Kasus {
 
     private int id_status;
