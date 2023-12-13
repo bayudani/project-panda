@@ -1,8 +1,10 @@
-// package com.finalproject.panda.Repository;
+package com.finalproject.panda.Repository;
 
-// import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-// public interface IdentitasRepo extends JpaRepository {
+import com.finalproject.panda.model.Identitas;
+
+public interface IdentitasRepo extends JpaRepository <String, Identitas>{
 
     
-// } 
+} 

@@ -1,8 +1,10 @@
-// package com.finalproject.panda.Repository;
+package com.finalproject.panda.Repository;
 
-// import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-// public interface KasusRepo extends JpaRepository {
+import com.finalproject.panda.model.Kasus;
+
+public interface KasusRepo extends JpaRepository<Integer, Kasus> {
 
      
-// }
+}
