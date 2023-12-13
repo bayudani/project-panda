@@ -1,47 +1,398 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Menu Utama Panda</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>PANDA | Pusat Aduan Perempua Dan Anak</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
     <link rel="stylesheet" href="../static/style/style.css" />
+
+    <!-- fontawesom-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+<!-- favivon -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/vendor/aos/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+
+    <!-- Template Main CSS File -->
+    <link
+      href="https://sipuan.sipesut.com/frontend/assets/css/style.css"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <input type="checkbox" id="check" />
-    <!--header area start-->
-    <header>
-      <label for="check">
-        <i class="fas fa-bars" id="sidebar_btn"></i>
-      </label>
-      <div class="left_area">
-        <h3>Pusat Aduan Anak Dan Perempuan</h3>
-      </div>
-      <div class="right_area">
-        <a href="#" class="logout_btn">Logout</a>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1>
+            <a
+              href="index.html"
+              style="
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              "
+              >PANDA
+            </a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#kontak">Contact</a></li>
+            <li><a class="getstarted scrollto" href="">Ajukan Pengaduan</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle fa-solid fa-bars"></i>
+        </nav>
+        <!-- .navbar -->
       </div>
     </header>
-    <!--header area end-->
-    <!--sidebar start-->
-    <div class="sidebar">
-      <center>
-        <img src="logo4coy-removebg-preview.png" class="profile_image" alt="" />
-        <h3>Pusat Aduan Anak Dan Perempuan</h3>
-      </center>
-      <a href="#"><i class="fa-solid fa-house-laptop"></i><span>Home</span></a>
-      <a href="#"><i class="fa-solid fa-message"></i><span>Chat</span></a>
-      <a href="#"
-        ><i class="fa-solid fa-envelopes-bulk"></i><span>Pengaduan</span></a
-      >
-      <a href="#"><i class="fas fa-info-circle"></i><span>Info</span></a>
-       <!-- <a href="#"><i class="fa-solid fa-sliders-h"></i><span>Settings</span></a> -->
-            <a href="#"><i class="fa-solid fa-map-location"></i><span>Map</span></a> 
-    </div>
-    <!--sidebar end-->
+    <!-- End Header -->
 
-    <div class="content"></div>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1"
+            data-aos="fade-up"
+          >
+            <div>
+              <h1>Unit Pelayanan Terpadu</h1>
+              <h2 class="text-teal">Pemberdayaan Perempuan Dan Anak</h2>
+              <p style="text-align: justify">
+                PANDA (Pusat Aduan Perempuan Dan Anak) dapat dimanfaatkan bagi
+                anda yang memiliki informasi dan ingin melaporkan adanya suatu
+                perbuatan yang berindikasi pelanggaran atas kode etik, disiplin
+                dan penyimpangan layanan oleh pegawai yang terjadi di Lingkup
+                Kabupaten Bengkalis
+              </p>
+              <p style="text-align: justify">
+                Pengaduan anda akan dapat lebih mudah kami tindaklanjuti jika
+                memenuhi unsur 4W + 1H sebagai berikut perbuatan berindikasi
+                pelanggaran <b>(What)</b>, lokasi <b>(Where)</b>, waktu
+                <b>(When)</b>, pihak yang terlibat <b>(Who)</b>, dan bagaimana
+                perbuatan tersebut dilakukan <b>(How)</b>.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://sipuan.sipesut.com/frontend/assets/img/image.svg"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= App Features Section ======= -->
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-title">
+            <h2>Keuntungan Menggunakan PANDA</h2>
+          </div>
+
+          <div class="row no-gutters">
+            <div class="col-xl-9 d-flex align-items-stretch order-2 order-lg-1">
+              <div class="content d-flex flex-column justify-content-center">
+                <div class="row">
+                  <div class="col-md-6 icon-box" data-aos="fade-up">
+                    <h4>Mudah dan praktis</h4>
+                    <p>
+                      USistem PANDA memungkinkan masyarakat untuk menyampaikan
+                      pengaduan kapanpun dan dimanapun. Masyarakat tidak perlu
+                      datang ke kantor UPT untuk menyampaikan pengaduannya.
+                      Cukup dengan membuka website, masyarakat dapat mengisi
+                      formulir pengaduan dengan mudah dan praktis.
+                    </p>
+                  </div>
+                  <div class="col-md-6 icon-box" data-aos="fade-up">
+                    <h4>Transparan dan akuntabel</h4>
+                    <p>
+                      Sistem website pengaduan masyarakat dapat meningkatkan
+                      transparansi dan akuntabilitas UPT dalam menangani
+                      pengaduan masyarakat. Masyarakat dapat melacak status
+                      pengaduan mereka secara online. Hal ini dapat meningkatkan
+                      kepercayaan masyarakat terhadap UPT.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="image col-xl-3 d-flex align-items-stretch justify-content-center order-1 order-lg-2"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
+              <img
+                src="https://sipuan.sipesut.com/frontend/assets/img/images.svg"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End App Features Section -->
+
+      <!-- ======= Frequently Asked Questions Section ======= -->
+      <section id="faq" class="faq section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Unsur Pengaduan</h2>
+          </div>
+
+          <div class="accordion-list">
+            <ul>
+              <li class="accordion-list" data-aos="fade-up">
+                <!-- <i class="fa-solid fa-question"></i> -->
+                <a
+                  data-bs-toggle="collapse"
+                  class="collapse"
+                  data-bs-target="#accordion-list-1"
+                  >What <i class="fa-solid fa-caret-down"></i
+                    ></a>
+                <div
+                  id="accordion-list-1"
+                  class="collapse show"
+                  data-bs-parent=".accordion-list"
+                >
+                  <p>
+                    Berupa informasi hal perbuatan yang berindikasi pelanggaran
+                    terhadap kode etik dan disiplin pegawai.
+                  </p>
+                  <p>(misal: pemukulan dan perkataan kasar)</p>
+                </div>
+                
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="100">
+                <!-- <i class="fa-solid fa-question"></i> -->
+                <a
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-list-2"
+                  class="collapsed"
+                  >Where<i class="fa-solid fa-caret-down"></i></a>
+                <div
+                  id="accordion-list-2"
+                  class="collapse"
+                  data-bs-parent=".accordion-list"
+                >
+                  <p>Lokasi terjadinya perbuakan dimaksud.</p>
+                  <p>(misal: pada Seksi/Subbagian...)</p>
+                </div>
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="200">
+                <!-- <i class="bx bx-help-circle icon-help"></i> -->
+                <a
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-list-3"
+                  class="collapsed"
+                  >When<i class="fa-solid fa-caret-down"></i></a>
+                <div
+                  id="accordion-list-3"
+                  class="collapse"
+                  data-bs-parent=".accordion-list"
+                >
+                  <p>Waktu terjadinya peristiwa/perbuatan dilakukan.</p>
+                  <p>
+                    (misal: pada tanggal 00 bulan xx tahun 0000, pukul 00.00
+                    WITA)
+                  </p>
+                </div>
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="300">
+                <!-- <i class="bx bx-help-circle icon-help"></i> -->
+                <a
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-list-4"
+                  class="collapsed"
+                  >Who<i class="fa-solid fa-caret-down"></i></a>
+                <div
+                  id="accordion-list-4"
+                  class="collapse"
+                  data-bs-parent=".accordion-list"
+                >
+                  <p>
+                    Siapa saja yang terlibat dalam perbuatan tersebut baik
+                    pelaku, penderita ataupun saksi yang mengetahui peristiwa.
+                  </p>
+                  <p>
+                    (misal: pelaku si A memukul dan berkata kasar terhadap si B
+                    yang disaksikan oleh si C dan si D)
+                  </p>
+                </div>
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="400">
+                <!-- <i class="bx bx-help-circle icon-help"></i> -->
+                <a
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-list-5"
+                  class="collapsed"
+                  >How<i class="fa-solid fa-caret-down"></i></a>
+                <div
+                  id="accordion-list-5"
+                  class="collapse"
+                  data-bs-parent=".accordion-list"
+                >
+                  <p>
+                    Berisi informasi modus/cara suatu perbuatan yang berindikasi
+                    pelanggaran dimaksud dilakukan.
+                  </p>
+                  <p>
+                    (misal: si A mendatangi ruangan si B dengan tanpa basa basi
+                    kemudian memukul berkali kali dengan tangan kosongnya dan
+                    berkata kasar mengumpat "$*#@%$" terhadap si B... dst)
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- End Frequently Asked Questions Section -->
+
+      <section class="faq section-bg">
+        <div class="container">
+          <div class="section-title"></div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+              <div class="card border-0" style="border-radius: 10px">
+                <div class="mt-1 text-center">
+                  <img src="" />
+                  <a
+                    href="https://www.lapor.go.id/tentang"
+                    class="fw-bold fs-3 text-decoration-none text-dark"
+                    target="_blank"
+                    >SP4N-LAPOR!</a
+                  >
+                </div>
+                <div class="card-body">
+                  <p class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nesciunt quisquam aperiam eius officia perfe rendis
+                    veritatis quos deleniti eligendi excepturi esse dolor dicta
+                    quidem ipsa volupta te, animi a. In, enim quod!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Frequently Asked Questions Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer">
+      <div class="footer-left">
+        <h3>PANDA</h3>
+
+        <p class="footer-copyright">&copy;2023 Kelompok 1 RPL 3B</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fas fa-map-marker"></i>
+          <p>
+            <span>Jl.pahlawan</span>Bengkalis kota,Kec Bengkalis,Kabupaten
+            Bengkails
+          </p>
+        </div>
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+6285271796184</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="#">blablabla@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-about">
+          <span>About</span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+          ipsam sint architecto doloribus cum quibusdam tempore voluptatibus
+          ipsa odio eos!
+        </p>
+        <div class="footer-media">
+          <a href=""><i class="fa-brands fa-youtube"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="fa-solid fa-arrow-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://sipuan.sipesut.com/frontend/assets/vendor/aos/aos.js"></script>
+    <script src="https://sipuan.sipesut.com/frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://sipuan.sipesut.com/frontend/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="https://sipuan.sipesut.com/frontend/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://sipuan.sipesut.com/frontend/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://sipuan.sipesut.com/frontend/assets/js/main.js"></script>
   </body>
 </html>
-
