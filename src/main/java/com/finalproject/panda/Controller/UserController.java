@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.finalproject.panda.Service.UserService;
 import com.finalproject.panda.model.User;
@@ -14,6 +15,11 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping("/login")
+    public String login(){
+        return "LoginPage";
+    }
 
     //form new user
     @GetMapping("/daftar")
@@ -30,17 +36,26 @@ public class UserController {
 
     // save user to db
     @PostMapping("/daftar")
-    public User saveUser(User user){
-       return userService.saveUser(user);
+    public String saveUser(User user){
+        try {
+            userService.saveUser(user);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return "redirect:/";
     }
+
 
     //login
-    @GetMapping("/masuk")
-    public String loginSucces(){
-        return "MenuUtama";
-    }
+    @PostMapping("/masuk")
+    public String loginSucces(@RequestParam String NIK, @RequestParam String password){
+        User loggedUser = userService.checkLogin(NIK, password);
+        if (loggedUser != null) {
 
-
-    
-    
+            return "redirect:/";
+        } else {
+            
+            return "redirect:/";
+        }
+    }  
 }
