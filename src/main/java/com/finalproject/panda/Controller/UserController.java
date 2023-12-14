@@ -37,8 +37,10 @@ public class UserController {
     //login
     @GetMapping("/masuk")
     public String loginSucces(){
-        return "LoginPage";
+        return "MenuUtama";
     }
+
+
     
     
 }
