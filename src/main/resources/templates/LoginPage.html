@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -48,7 +48,7 @@
       <div class="card-body p-4">
         <img src="../static/img/Panda.png" width="100px" alt="" class="mx-auto d-block mb-2 img-fluid">
         <h1 class="text-center">Login</h1>
-        <form>
+        <form th:action="@{/Daftar}">
           <div class="form-group">
             <label for="nik">NIK:</label>
             <input type="text" class="form-control" id="nik" name="nik" required>
