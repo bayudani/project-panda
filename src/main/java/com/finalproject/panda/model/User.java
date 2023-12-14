@@ -1,5 +1,7 @@
 package com.finalproject.panda.model;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -20,11 +22,16 @@ public class User {
 
     private String nama_lengkap;
     private String password;
+
+    public void setPassword(String password) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        this.password = passwordEncoder.encode(password);
+    }
+
     private String alamat;
     private String hp;
 
     @OneToOne(mappedBy = "user")
-    private Identitas identitas;
+    private Pengaduan pengaduan;
 
 }
-

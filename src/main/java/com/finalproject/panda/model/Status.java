@@ -24,7 +24,7 @@ public class Status {
     private String jenis_status;
 
     @OneToMany(mappedBy = "status")
-    private List<Identitas> identitasList;
+    private List<Pengaduan> pengaduanList;
 
 }
 
