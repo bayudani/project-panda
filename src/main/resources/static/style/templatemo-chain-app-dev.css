@@ -1244,6 +1244,14 @@ footer {
   padding-left: 150px;
 }
 
+#Section{
+  transition-delay: 0.1s;
+  transition-duration: 0.4s;
+}
+
+#Section:hover{
+  transform: scale(1.05);
+}
 
 /* 
 ---------------------------------------------
