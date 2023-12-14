@@ -1244,7 +1244,14 @@ footer {
   padding-left: 150px;
 }
 
+#section{
+  transition-delay: 0.1s;
+  transition-duration: 0.4s;
+}
 
+#section:hover{
+  transform: scale(1.05);
+}
 /* 
 ---------------------------------------------
 responsive
