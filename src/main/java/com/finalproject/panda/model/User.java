@@ -24,7 +24,6 @@ public class User {
     private String password;
 
     public void setPassword(String password) {
-        // Use BCryptPasswordEncoder to hash the password
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         this.password = passwordEncoder.encode(password);
     }
@@ -33,6 +32,6 @@ public class User {
     private String hp;
 
     @OneToOne(mappedBy = "user")
-    private Identitas identitas;
+    private Pengaduan pengaduan;
 
 }

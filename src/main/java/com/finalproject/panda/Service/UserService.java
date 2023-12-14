@@ -18,24 +18,25 @@ public class UserService {
     private UserRepo userRepo;
 
     public User saveUser(User user) {
+
         return userRepo.save(user);
     }
 
-    public User checkLogin(String NIK, String password){
+    public User checkLogin(String NIK, String password) {
         User user = userRepo.findByNIK(NIK);
 
-        if(user != null){
+        if (user != null) {
             String passFromDb = user.getPassword();
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
             if (passwordEncoder.matches(password, passFromDb)) {
                 log.info(user.getNama_lengkap() + " berhasil login");
                 return user;
-            }else{
+            } else {
                 log.info("Password salah");
             }
-            
-        }else{
+
+        } else {
             log.info("User tidak ditemukan");
         }
         return null;

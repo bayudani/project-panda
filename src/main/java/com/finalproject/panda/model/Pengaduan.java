@@ -12,11 +12,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "identitas")
+@Entity(name = "pengaduan")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Identitas {
+public class Pengaduan {
 
     @Id
     @OneToOne
@@ -27,13 +27,16 @@ public class Identitas {
     private String alamat;
     private String pekerjaan;
     private String pendidikan;
+    private String aduan;
+    private String harapan;
     private Date TTL;
+
 
     @ManyToOne
     @JoinColumn(name = "status_id")
     private Status status;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "registrasi_id")
     private Registrasi registrasi;
 

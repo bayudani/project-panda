@@ -16,6 +16,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/")
+    public String menu(){
+        return "MenuUtama";
+    }
+    
     @GetMapping("/login")
     public String login(){
         return "LoginPage";
@@ -45,9 +50,8 @@ public class UserController {
         return "redirect:/";
     }
 
-
     //login
-    @PostMapping("/masuk")
+    @PostMapping("/login")
     public String loginSucces(@RequestParam String NIK, @RequestParam String password){
         User loggedUser = userService.checkLogin(NIK, password);
         if (loggedUser != null) {
