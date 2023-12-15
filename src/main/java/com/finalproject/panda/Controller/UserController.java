@@ -61,6 +61,7 @@ public class UserController {
             return "redirect:/daftar";
         } else {  
             return "redirect:/login";
+            
         }
     }  
 }
