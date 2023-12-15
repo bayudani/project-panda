@@ -17,13 +17,15 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    public User saveUser(User user) {
+    public User saveUser(User users) {
 
-        return userRepo.save(user);
+        User saveUser = userRepo.save(users);
+        log.info(users.getNama_lengkap() + " berhasil mendaftar");
+        return saveUser;
     }
 
-    public User checkLogin(String NIK, String password) {
-        User user = userRepo.findByNIK(NIK);
+    public User checkLogin(String nik, String password) {
+        User user = userRepo.findByNik(nik);
 
         if (user != null) {
             String passFromDb = user.getPassword();

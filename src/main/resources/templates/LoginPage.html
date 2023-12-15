@@ -57,7 +57,7 @@
             class="mx-auto d-block mb-2 img-fluid"
           />
           <h1 class="text-center">Login</h1>
-          <form th:action="@{/login}" method="post">
+          <form th:action="@{/login}" th:object="${user}" method="post">
             <div class="form-group">
               <label for="nik">NIK:</label>
               <input
