@@ -1244,15 +1244,18 @@ footer {
   padding-left: 150px;
 }
 
-#Section{
+#section{
   transition-delay: 0.1s;
   transition-duration: 0.4s;
 }
 
-#Section:hover{
+#section:hover{
   transform: scale(1.05);
 }
 
+.fa-location-dot{
+  color: #fff;
+}
 /* 
 ---------------------------------------------
 responsive
