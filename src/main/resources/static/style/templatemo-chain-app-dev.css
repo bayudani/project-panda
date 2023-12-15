@@ -736,7 +736,7 @@ Banner Style
 
 .main-banner:after {
   content: '';
-  background-image: url(../images/slider-left-dec.png);
+  background-image: url(/img/slider-left-dec.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -857,7 +857,7 @@ About Us
 }
 
 .about-us:after {
-  background-image: url(../images/about-bg.jpg);
+  background-image: url(/img/about-bg.jpg);
   width: 777px;
   height: 1132px;
   content: '';
@@ -973,7 +973,7 @@ The Clients
 
 .the-clients .nacc .thumb .client-content {
   padding: 60px 30px;
-  background-image: url(../images/client-bg.png);
+  background-image: url(/img/client-bg.png);
   background-size: cover;
   border-radius: 50px;
   width: 100%;
@@ -1052,7 +1052,7 @@ The Clients
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(../images/regular-table-top.png);
+  background-image: url(/img/regular-table-top.png);
   z-index: 0;
   content: '';
   width: 274px;
@@ -1063,7 +1063,7 @@ The Clients
   position: absolute;
   bottom: 0;
   right: 0;
-  background-image: url(../images/regular-table-bottom.png);
+  background-image: url(/img/regular-table-bottom.png);
   z-index: 0;
   content: '';
   width: 370px;
@@ -1127,7 +1127,7 @@ The Clients
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(../images/pro-table-top.png);
+  background-image: url(/img/pro-table-top.png);
   z-index: 0;
   content: '';
   width: 281px;
@@ -1140,7 +1140,7 @@ The Clients
   right: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../images/pro-table-bottom.png);
+  background-image: url(/img/pro-table-bottom.png);
   z-index: 0;
   content: '';
   width: 100%;
@@ -1203,7 +1203,7 @@ Footer Style
 */
 
 footer {
-  background-image: url(../images/footer-bg.png);
+  background-image: url(/img/footer-bg.png);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1244,15 +1244,18 @@ footer {
   padding-left: 150px;
 }
 
-#Section{
+#section{
   transition-delay: 0.1s;
   transition-duration: 0.4s;
 }
 
-#Section:hover{
+#section:hover{
   transform: scale(1.05);
 }
 
+.fa-location-dot{
+  color: #fff;
+}
 /* 
 ---------------------------------------------
 responsive
