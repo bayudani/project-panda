@@ -45,7 +45,7 @@ public class UserController {
         try {
             userService.saveUser(user);
         } catch (Exception e) {
-            // TODO: handle exception
+            
         }
         return "redirect:/";
     }
