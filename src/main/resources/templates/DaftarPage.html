@@ -53,58 +53,32 @@
         class="mx-auto d-block mb-2"
       />
       <h2 class="text-center font-weight-bold">Registrasi</h2>
-      <form>
+      <form th:action="@{/daftar}" th:object="${user}" method="post">
         <div class="form-group">
-          <label for="namaLengkap">Nama Lengkap:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="namaLengkap"
-            placeholder="Ketik disini"
-          />
+            <label for="namaLengkap">Nama Lengkap:</label>
+            <input type="text" class="form-control" id="namaLengkap" th:field="*{nama_lengkap}" placeholder="Ketik disini"/>
+        </div>
+        <!-- Add th:field attribute to other input fields similarly -->
+        <div class="form-group">
+            <label for="noKTP">NIK:</label>
+            <input type="text" class="form-control" id="nik" th:field="*{nik}" placeholder="Ketik disini"/>
         </div>
         <div class="form-group">
-          <label for="noKTP">NIK:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="noKTP"
-            placeholder="Ketik disini"
-          />
+            <label for="alamat">Alamat:</label>
+            <input type="text" class="form-control" id="alamat" th:field="*{alamat}" placeholder="Ketik disini"/>
         </div>
         <div class="form-group">
-          <label for="alamat">Alamat:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="alamat"
-            placeholder="Ketik disini"
-          />
+            <label for="nomor_hp">Nomor Telpon / Ponsel:</label>
+            <input type="text" class="form-control" id="nomor_hp" th:field="*{nomor_hp}" placeholder="Ketik disini"/>
         </div>
         <div class="form-group">
-          <label for="nomorTelpon">Nomor Telpon / Ponsel:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nomorTelpon"
-            placeholder="Ketik disini"
-          />
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" th:field="*{password}" placeholder="Ketik disini"/>
         </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            placeholder="Ketik disini"
-          />
-        </div>
-
-        
-        <button type="submit" class="btn btn-primary btn-block">
-          Registrasi
-        </button>
-      </form>
+    
+        <button type="submit" class="btn btn-primary btn-block">Registrasi</button>
+    </form>
+    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

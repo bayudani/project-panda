@@ -18,7 +18,7 @@ import lombok.Setter;
 public class User {
 
     @Id
-    private String NIK;
+    private String nik;
 
     private String nama_lengkap;
     private String password;
@@ -29,7 +29,7 @@ public class User {
     }
 
     private String alamat;
-    private String hp;
+    private String nomor_hp;
 
     @OneToOne(mappedBy = "user")
     private Pengaduan pengaduan;

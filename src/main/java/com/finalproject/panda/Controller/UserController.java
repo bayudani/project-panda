@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -41,9 +42,10 @@ public class UserController {
 
     // save user to db
     @PostMapping("/daftar")
-    public String saveUser(User user){
+    public String saveUser(Model model, User users){
         try {
-            userService.saveUser(user);
+            userService.saveUser(users);
+            model.addAttribute("user", users);
         } catch (Exception e) {
             
         }
@@ -52,14 +54,13 @@ public class UserController {
 
     //login
     @PostMapping("/login")
-    public String loginSucces(@RequestParam String NIK, @RequestParam String password){
-        User loggedUser = userService.checkLogin(NIK, password);
+    public String loginSucces(@RequestParam String nik, @RequestParam String password){
+        User loggedUser = userService.checkLogin(nik, password);
         if (loggedUser != null) {
 
-            return "redirect:/";
-        } else {
-            
-            return "redirect:/";
+            return "redirect:/daftar";
+        } else {  
+            return "redirect:/login";
         }
     }  
 }

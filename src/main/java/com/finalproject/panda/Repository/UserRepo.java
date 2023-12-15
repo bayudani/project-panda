@@ -6,6 +6,6 @@ import com.finalproject.panda.model.User;
 
 public interface UserRepo extends JpaRepository<User, Integer> {
 
-    User findByNIK(String NIK);
+    User findByNik(String nik);
 
 }
