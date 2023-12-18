@@ -23,7 +23,10 @@ public class UserController {
     public String login(){
         return "LoginPage";
     }
-
+ @GetMapping("/pengaduann")
+    public String pengaduann(){
+        return "PengaduanPage";
+    }
     //form new user
     @GetMapping("/daftar")
     public String daftarPage(Model model){
@@ -58,10 +61,13 @@ public class UserController {
         User loggedUser = userService.checkLogin(nik, password);
         if (loggedUser != null) {
 
-            return "redirect:/daftar";
+            return "redirect:/pengaduann";
         } else {  
             return "redirect:/login";
-            
+
         }
     }  
+
+   
+    
 }
