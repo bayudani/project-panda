@@ -1,6 +1,10 @@
 package com.finalproject.panda.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +29,7 @@ public class Pengaduan {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id_registrasi;
 
-    private Date created_at;
+    private LocalDateTime created_at;
 
     @OneToOne
     @JoinColumn(name = "user_nik")
@@ -37,10 +41,21 @@ public class Pengaduan {
     private String pendidikan;
     private String aduan;
     private String harapan;
-    private Date TTL;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate TTL;
 
     @ManyToOne
     @JoinColumn(name = "status_id")
     private Status status;
 
+    public void setCreated_at(){
+        this.created_at = LocalDateTime.now();
+    }
+
+    public LocalDateTime getCreated_at(){
+        return created_at;
+    }
+
+   
 }

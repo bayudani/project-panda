@@ -18,18 +18,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "LoginPage";
     }
- @GetMapping("/pengaduann")
-    public String pengaduann(){
+
+    @GetMapping("/pengaduann")
+    public String pengaduann() {
         return "PengaduanPage";
     }
-    //form new user
+
+    // form new user
     @GetMapping("/daftar")
-    public String daftarPage(Model model){
+    public String daftarPage(Model model) {
         try {
             User user = new User();
             model.addAttribute("user", user);
@@ -42,32 +43,29 @@ public class UserController {
 
     // save user to db
     @PostMapping("/daftar")
-    public String saveUser(Model model, User users){
+    public String saveUser(Model model, User users) {
         try {
             userService.saveUser(users);
             model.addAttribute("user", users);
         } catch (Exception e) {
-            
+
         }
-        return "redirect:/";
+        return "redirect:/panda/login";
     }
 
-    //login
+    // login
     @PostMapping("/login")
     public String loginSucces(
-        @RequestParam String nik, 
-        @RequestParam String password
-    ){
+            @RequestParam String nik,
+            @RequestParam String password) {
         User loggedUser = userService.checkLogin(nik, password);
         if (loggedUser != null) {
 
-            return "redirect:/pengaduann";
-        } else {  
-            return "redirect:/login";
+            return "redirect:/panda/pengaduan";
+        } else {
+            return "redirect:/panda/login";
 
         }
-    }  
+    }
 
-   
-    
 }
