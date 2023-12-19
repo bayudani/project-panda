@@ -1,284 +1,141 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Aduan PANDA</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Pengaduan</title>
     <style>
-      /* body{
-            margin: 0;
-            padding: 0;
-        } */
-      .form-control:not(select) {
-        padding: 1.5rem 0.5rem;
-      }
-
-      .form-control::placeholder {
-        color: #ccc;
-        font-weight: bold;
-        font-size: 0.9rem;
-      }
-
-      .form-control:focus {
-        box-shadow: none;
-      }
-
-      .navbar-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px;
-        margin-left: 990px;
-      }
-
-      .border-md {
-        border-width: 2px;
-      }
-
-      em {
-        color: red;
-      }
-      h1 {
-        position: relative;
-      }
-      h1::before {
-        content: "";
-        width: 100%;
-        height: 200px;
-        background: url(/img/services-left-dec.png);
-        background-repeat: no-repeat;
-        background-size: 50%;
-        position: absolute;
-        top: -155px;
-        left: -10px;
-        z-index: -1;
-      }
-
-      @media screen and (max-width: 1200px) {
-        .navbar-nav {
-          margin-left: 0px;
-          text-align: center;
+        /* Add any additional styles not covered by Tailwind here */
+        .navbar {
+            background-color: #3490dc; /* Blue background color */
         }
-        h1::before {
-          display: none;
+
+        .navbar-brand img {
+            filter: brightness(0) invert(1); /* Invert logo color for better visibility on dark background */
         }
-      }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text color */
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <!--navbar start-->
-    <nav class="navbar navbar-expand-lg navbar-light py-3">
-      <a href="#" class="navbar-brand">
-        <img src="/img/logo3coy.png" alt="logo" width="180" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#pengaduan">pengaduan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Konsultasi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" th:href="@{/panda/login}">Logout</a>
-          </li>
-        </ul>
-      </div>
+<body class="bg-gray-100">
+    <!-- Navbar start -->
+    <nav class="navbar flex justify-between items-center p-3 bg-blue-500 text-white">
+        <a href="#" class="navbar-brand">
+            <img src="/img/logo3coy.png" alt="logo" width="180" />
+        </a>
+        <div class="navbar-nav flex">
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/}">Home</a>
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/panda/pengaduan}">pengaduan</a>
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/panda/konsultasi}">Konsultasi</a>
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/panda/login}">Logout</a>
+        </div>
     </nav>
-    <!--navbar end-->
+    <!-- Navbar end -->
 
-    <!--aduan start-->
-    <div class="container mt-2" id="pengaduan">
-      <div class="row py-5 align-items-center">
-        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-          <img
-            src="/img/Premium_Vector___Working_woman_presentation-removebg-preview.png"
-            alt="form"
-            class="img-fluid mb-3 d-none d-md-block"
-          />
-          <h1>Isi form pengaduan</h1>
-          <p class="font-italic text-muted mb-0">
-            Mohon isi data di samping dengan <em>lengkap dan valid</em> untuk
-            mempermudah tim kami dalam memproses pengaduan anda
-          </p>
-        </div>
-
-        <!-- Registeration Form -->
-        <div class="col-md-7 col-lg-6 ml-auto">
-          <form
-            th:action="@{/panda/pengaduan}"
-            th:object="${pengaduan}"
-            method="post"
-          >
-            <div class="row">
-              <!-- nama-->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa fa-user text-muted"></i>
-                  </span>
-                </div>
-                <input
-                  id="nama"
-                  type="text"
-                  name="nama"
-                  placeholder="Nama lengkap"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <!-- alamat -->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa-solid fa-map-location-dot"></i>
-                  </span>
-                </div>
-                <input
-                  id="alamat"
-                  type="text"
-                  name="alamat"
-                  placeholder="Alamat"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <!-- pekerjaan -->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa fa-user text-muted"></i>
-                  </span>
-                </div>
-                <input
-                  id="pekerjaan"
-                  type="text"
-                  name="pekerjaan"
-                  placeholder="pekerjaan"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <!-- Pendidikan -->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa fa-user text-muted"></i>
-                  </span>
-                </div>
-                <input
-                  id="firstName"
-                  type="text"
-                  name="Pendidikan"
-                  placeholder="Pendidikan"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <!-- Tanggal lahir -->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa-regular fa-calendar-days"></i>
-                  </span>
-                </div>
-                <input
-                  id="TTL"
-                  type="date"
-                  name="TTL"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <!-- pengaduan -->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa-regular fa-message"></i
-                  ></span>
-                </div>
-                <input
-                  id="aduan"
-                  type="text"
-                  name="aduan"
-                  placeholder="Aduan"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <!-- hal di harapkn -->
-              <div class="input-group col-lg-12 mb-4">
-                <div class="input-group-prepend">
-                  <span
-                    class="input-group-text bg-white px-4 border-md border-right-0"
-                  >
-                    <i class="fa-regular fa-message"></i
-                  ></span>
-                </div>
-                <input
-                  id="harapan"
-                  type="text"
-                  name="harapan"
-                  rows="3"
-                  placeholder="Hal yang anda harapkan"
-                  class="form-control bg-white border-left-0 border-md"
-                  required
-                />
-              </div>
-
-              <div class="form-group col-lg-12 mx-auto mb-0">
-                <button type="submit" class="btn btn-primary btn-block py-2">
-                  Kirim
-                </button>
-              </div>
+    <!-- Form start -->
+    <div class="container mt-8">
+        <div class="flex flex-col md:flex-row items-center justify-center">
+            <div class="md:w-1/2 mb-4 md:mb-0">
+                <img src="/img/Premium_Vector___Working_woman_presentation-removebg-preview.png" alt="form"
+                    class="mb-3 mx-auto md:mx-0 md:mr-8" />
+                <h1 class="text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-center md:text-left md:pl-2">Isi form
+                    pengaduan</h1>
+                <p class="text-sm md:text-base font-italic text-muted text-center md:text-left md:pl-2">
+                    Mohon isi data di samping dengan <em>lengkap dan valid</em> untuk mempermudah tim kami dalam memproses
+                    pengaduan anda
+                </p>
             </div>
-          </form>
+
+            <!-- Registration Form -->
+            <div class="md:w-1/2">
+                <form id="pengaduanForm" th:action="@{/panda/pengaduan}" th:object="${pengaduan}" method="post"
+                    class="bg-white shadow-md rounded-md p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- nama-->
+                        <div class="mb-4">
+                            <label for="nama" class="block text-sm font-medium text-gray-700">Nama lengkap</label>
+                            <input id="nama" type="text" th:field="*{nama}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Nama lengkap" required />
+                        </div>
+
+                        <!-- alamat -->
+                        <div class="mb-4">
+                            <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+                            <input id="alamat" type="text" th:field="*{alamat}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Alamat" required />
+                        </div>
+
+                        <!-- pekerjaan -->
+                        <div class="mb-4">
+                            <label for="pekerjaan" class="block text-sm font-medium text-gray-700">Pekerjaan</label>
+                            <input id="pekerjaan" type="text" th:field="*{pekerjaan}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Pekerjaan" required />
+                        </div>
+
+                        <!-- Pendidikan -->
+                        <div class="mb-4">
+                            <label for="Pendidikan" class="block text-sm font-medium text-gray-700">Pendidikan</label>
+                            <input id="Pendidikan" type="text" th:field="*{pendidikan}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Pendidikan" required />
+                        </div>
+
+                        <!-- TTL -->
+                        <div class="mb-4">
+                            <label for="TTL" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
+                            <input id="TTL" type="date" th:field="*{TTL}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                required />
+                        </div>
+
+                        <!-- aduan -->
+                        <div class="mb-4">
+                            <label for="aduan" class="block text-sm font-medium text-gray-700">Aduan</label>
+                            <input id="aduan" type="text" th:field="*{aduan}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Aduan" required />
+                        </div>
+
+                        <!-- harapan -->
+                        <div class="mb-4 col-span-2">
+                            <label for="harapan" class="block text-sm font-medium text-gray-700">Hal yang anda
+                                harapkan</label>
+                            <textarea id="harapan" th:field="*{harapan}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full h-24 focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Hal yang anda harapkan" required></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="form-group col-span-2">
+                            <button type="button"
+                                class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+                                onclick="submitForm()">Kirim</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+    <!-- Form end -->
+
+    <script>
+        function submitForm() {
+            document.getElementById('pengaduanForm').submit();
+            alert("Form submitted successfully!");
+        }
+    </script>
+</body>
+
 </html>

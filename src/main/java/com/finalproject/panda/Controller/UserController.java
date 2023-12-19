@@ -1,5 +1,7 @@
 package com.finalproject.panda.Controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+        private static final Logger log = LoggerFactory.getLogger(UserService.class);
+
 
     @GetMapping("/login")
     public String login() {
@@ -61,6 +66,7 @@ public class UserController {
         User loggedUser = userService.checkLogin(nik, password);
         if (loggedUser != null) {
 
+            log.info(loggedUser.getNama_lengkap() + "user barhasil login ");
             return "redirect:/panda/pengaduan";
         } else {
             return "redirect:/panda/login";

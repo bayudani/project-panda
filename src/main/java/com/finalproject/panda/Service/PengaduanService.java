@@ -20,18 +20,38 @@ public class PengaduanService {
     @Autowired
     private PengaduanRepo pengaduanRepo;
 
+    @Autowired
+    private UserService userService;
+
     public List<Pengaduan> getAllPengaduan() {
         return pengaduanRepo.findAll();
     }
 
     public Pengaduan savePengaduan(Pengaduan pengaduan) {
-
-        pengaduan.setCreated_at(LocalDateTime.now());
-
-        Pengaduan savePengaduan = pengaduanRepo.save(pengaduan);
-        log.info("Pengaduan dengan id register: " + pengaduan.getId_registrasi() + " berhasil di tambahkan");
-        return savePengaduan;
+        // log.info("User = ", user);
+        try {
+            // User user = userService.getUserByNik()
+            // User savedUser = userService.saveUser(user);
+            
+            // Setel waktu pembuatan pengaduan
+            pengaduan.setCreated_at(LocalDateTime.now());
+    
+            // Setel pengguna ke objek pengaduan
+            // pengaduan.setUser(savedUser);
+    
+            // Simpan pengaduan ke database
+            Pengaduan savedPengaduan = pengaduanRepo.save(pengaduan);
+    
+            log.info("Pengaduan dengan id registrasi: " + savedPengaduan.getId_registrasi() + " berhasil ditambahkan");
+    
+            return savedPengaduan;
+        } catch (Exception e) {
+            // Tangani kesalahan jika diperlukan
+            log.error("Gagal menyimpan pengaduan: " + e.getMessage());
+            throw new RuntimeException("Gagal menyimpan pengaduan", e );
+        }
     }
+    
 
     public void deletePengaduan(Integer id) {
         pengaduanRepo.deleteById(id);
