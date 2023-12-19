@@ -43,4 +43,8 @@ public class UserService {
         }
         return null;
     }
+
+    public User getUserByNik(String nik) {
+        return userRepo.findByNik(nik);
+    }
 }

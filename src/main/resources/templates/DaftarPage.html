@@ -53,7 +53,7 @@
         class="mx-auto d-block mb-2"
       />
       <h2 class="text-center font-weight-bold">Registrasi</h2>
-      <form th:action="@{/daftar}" th:object="${user}" method="post">
+      <form th:action="@{/panda/daftar}" th:object="${user}" method="post">
         <div class="form-group">
             <label for="namaLengkap">Nama Lengkap:</label>
             <input type="text" class="form-control" id="namaLengkap" th:field="*{nama_lengkap}" placeholder="Ketik disini" required/>

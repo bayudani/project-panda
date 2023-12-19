@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Konsultasi</title>
+</head>
+<body>
+
+    <div class="container mx-auto p-8 mt-10 bg-white rounded-md shadow-md max-w-lg">
+        <h1 class="text-3xl font-bold mb-6 text-blue-600">Konsultasi</h1>
+        <form action="mailto:agustptr44@gmail.com" method="post" enctype="text/plain">
+            <label for="feedback" class="block text-sm font-medium text-gray-700">Konsultasi:</label>
+            <textarea id="feedback" name="feedback" rows="5" class="mt-1 p-2 border border-blue-400 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"></textarea>
+
+            <div class="mt-4">
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Kirim</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
