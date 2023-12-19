@@ -4,59 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Aduan PANDA</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Pengaduan</title>
     <style>
         /* Add any additional styles not covered by Tailwind here */
         .navbar {
             background-color: #3490dc; /* Blue background color */
         }
 
-        .navbar-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px;
-            margin-left: 990px;
+        .navbar-brand img {
+            filter: brightness(0) invert(1); /* Invert logo color for better visibility on dark background */
         }
 
-        .border-md {
-            border-width: 2px;
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text color */
         }
 
-        em {
-            color: red;
-        }
-        h1{
-            position: relative;
-        }
-        h1::before{
-            content: "";
-            width: 100%;
-            height: 200px;
-            background: url(/img/services-left-dec.png );
-            background-repeat: no-repeat;
-            background-size: 50%;
-            position: absolute;
-            top: -155px;
-            left: -10px;
-            z-index: -1;
-
-        }
-
-        @media screen and (max-width: 1200px){
-            .navbar-nav{
-                margin-left: 0px;
-                text-align: center;
-             
-            }
-           h1::before{
-            display: none;
-           }
+        .navbar-nav .nav-link:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
         }
     </style>
 </head>
@@ -135,29 +100,21 @@
                                 required />
                         </div>
 
-                        <!-- hal di harapkn -->
-                        <div class="input-group col-lg-12 mb-4 ">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                    <i class="fa-regular fa-message"></i></span>
-                            </div>
-                            <input id="pesan" type="text" name="password" rows="3" placeholder="Hal yang anda harapkan"
-                                class="form-control bg-white border-left-0 border-md  " required >
+                        <!-- aduan -->
+                        <div class="mb-4">
+                            <label for="aduan" class="block text-sm font-medium text-gray-700">Aduan</label>
+                            <input id="aduan" type="text" th:field="*{aduan}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Aduan" required />
                         </div>
 
-
-                        <!-- <div class="form-group col-lg-12 mb-4">
-                      <label for="exampleFormControlTextarea1">Keterangan</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Keterangan"></textarea>
-                  </div> -->
-
-
-                        <!-- Submit Button -->
-                        <div class="form-group col-lg-12 mx-auto mb-0">
-                            <!-- <a th:href="@{/daftar}" class="btn btn-primary btn-block py-2">
-                                <span class="font-weight-bold">Kirim aduan</span>
-                            </a> -->
-                            <button type="submit" class="btn btn-primary btn-block py-2">Kirim</button>
+                        <!-- harapan -->
+                        <div class="mb-4 col-span-2">
+                            <label for="harapan" class="block text-sm font-medium text-gray-700">Hal yang anda
+                                harapkan</label>
+                            <textarea id="harapan" th:field="*{harapan}"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full h-24 focus:outline-none focus:ring focus:border-blue-500"
+                                placeholder="Hal yang anda harapkan" required></textarea>
                         </div>
 
                         <!-- Submit button -->
@@ -171,9 +128,14 @@
             </div>
         </div>
     </div>
-    
-    
+    <!-- Form end -->
 
+    <script>
+        function submitForm() {
+            document.getElementById('pengaduanForm').submit();
+            alert("Form submitted successfully!");
+        }
+    </script>
 </body>
 
 </html>
