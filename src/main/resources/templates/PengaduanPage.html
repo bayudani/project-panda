@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Aduan PANDA</title>
     <style>
 
@@ -62,6 +63,11 @@
             left: -10px;
             z-index: -1;
 
+        }
+        footer{
+            background-color:#ece9e9 ;
+            padding: 20px;
+            text-align: center
         }
 
         @media screen and (max-width: 1200px){
@@ -190,7 +196,7 @@
                                 <span class="input-group-text bg-white px-4 border-md border-right-0">
                                     <i class="fa-regular fa-message"></i></span>
                             </div>
-                            <input id="pesan" type="text" name="password" rows="3" placeholder="Hal yang anda harapkan"
+                            <input id="pesan" type="text" name="hal" rows="3" placeholder="Hal yang anda harapkan"
                                 class="form-control bg-white border-left-0 border-md  " required >
                         </div>
 
@@ -206,7 +212,7 @@
                             <!-- <a th:href="@{/daftar}" class="btn btn-primary btn-block py-2">
                                 <span class="font-weight-bold">Kirim aduan</span>
                             </a> -->
-                            <button type="submit" class="btn btn-primary btn-block py-2">Kirim</button>
+                            <button type="submit" class="btn btn-primary btn-block py-2 ">Kirim</button>
                         </div>
 
 
@@ -216,7 +222,10 @@
         </div>
     </div>
     
-    
+    <footer>
+        <p> © UPT PPA bengkalis</p>
+    </footer>
+
 
 </body>
 
