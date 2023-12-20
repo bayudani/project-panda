@@ -52,8 +52,6 @@
   </head>
 
   <body class="bg-light">
-    
-  
     <div class="container-fluid mt-5">
       <div class="card bg-light mx-auto shadow-lg custom-card">
         <div class="card-body p-4">
@@ -65,6 +63,10 @@
           />
           <h1 class="text-center">Login</h1>
           <form th:action="@{/panda/login}" method="post">
+            <input type="hidden" id="loginError" th:value="${loginError != null ? loginError : 'false'}" />
+
+
+            <h1 th:text="${loginError}"></h1>
             <div class="form-group">
               <label for="nik">NIK:</label>
               <input
@@ -84,9 +86,13 @@
                 name="password"
                 required
               />
-              
-              <input type="checkbox" onclick="document.getElementById('password').type = (this.checked ? 'text' : 'password');"> Tampilkan password
 
+              <input
+                style="margin-top: 10px"
+                type="checkbox"
+                onclick="document.getElementById('password').type = (this.checked ? 'text' : 'password');"
+              />
+              Tampilkan password
             </div>
             <button
               type="submit"
@@ -96,6 +102,7 @@
               Masuk
             </button>
           </form>
+
           <div class="mt-3 text-center">
             <a th:href="@{/panda/daftar}" href="register.html">Daftar Akun</a>
           </div>
@@ -103,18 +110,24 @@
       </div>
     </div>
     <script>
-            function login() {
-        document.getElementById('password').type = (this.checked ? 'text' : 'password');
-            }
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Password/NIK salah",
-        
-      });
-    
-    </script>
+      function login() {
+        var loginError = document.getElementById("loginError").value;
 
+        if (loginError === "true") {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Password/NIK salah",
+          });
+        } else {
+          Swal.fire({
+            icon: "success",
+            title: "Yeay...",
+            text: "Password/NIK benar",
+          });
+        }
+      }
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

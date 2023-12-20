@@ -18,7 +18,6 @@ public class UserService {
     private UserRepo userRepo;
 
     public User saveUser(User users) {
-
         User saveUser = userRepo.save(users);
         log.info(users.getNama_lengkap() + " berhasil mendaftar");
         return saveUser;
@@ -47,4 +46,5 @@ public class UserService {
     public User getUserByNik(String nik) {
         return userRepo.findByNik(nik);
     }
+
 }

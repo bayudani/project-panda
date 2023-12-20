@@ -6,171 +6,62 @@
 >
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title th:replace="${title}">Home</title>
-    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <!-- DataTables CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
-    />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" th:href="@{/style/custom.css}" type="text/css" />
-    <link rel="stylesheet" href="../static/style/custom.css" />
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- sweetallert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css"
-    />
+    <title th:replace="${title}">Pengaduan</title>
+
+    <style>
+      .navbar-brand img {
+        filter: brightness(0) invert(1); /* Invert logo color for better visibility on dark background */
+      }
+    </style>
   </head>
-  <body>
+
+  <body class="bg-gray-100">
     <div class="container-fluid">
-      <!-- Header -->
-      <header class="text-white text-center py-3">
-        <h1>panda</h1>
-      </header>
-
-      <!-- Horizontal Menu -->
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li
-              class="nav-item"
-              th:class="(${menu} == 'home')? 'nav-item active':'nav-item'"
-            >
-              <a class="nav-link" href="MenuUtama.html" th:href="@{/masuk}"
-                ><i class="fas fa-home mr-2"></i>Home</a
-              >
-            </li>
-            <li
-              class="nav-item"
-              th:class="(${menu} == 'employers')? 'nav-item active':'nav-item'"
-            >
-              <a
-                class="nav-link"
-                href="PengaduanPage.html"
-                th:href="@{/Pengaduan}"
-                ><i class="fas fa-user mr-2"></i>Pengaduan</a
-              >
-            </li>
-
-            <li
-              class="nav-item"
-              th:class="(${menu} == 'salaries')? 'nav-item active':'nav-item'"
-            >
-              <a
-                class="nav-link"
-                href="KonsultasiPage.html"
-                th:href="@{/Konsultasi}"
-                ><i class="fas fa-user mr-2"></i>Konsultasi</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="/logoutt"
-                th:href="@{/login}"
-                onclick="logout()"
-                ><i class="fas fa-cog mr-2"></i>Logout</a
-              >
-            </li>
-          </ul>
+      <!-- Navbar -->
+      <nav
+        class="navbar flex justify-between items-center p-4 bg-blue-500 text-white h-36"
+      >
+        <a href="#" class="navbar-brand text-2xl font-bold">
+          <img src="/img/logo3coy.png" alt="logo" width="180" />
+        </a>
+        <div class="navbar-nav flex space-x-4">
+          <a
+            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+            th:href="@{/}"
+            >Home</a
+          >
+          <a
+            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+             
+            th:href="@{/panda/pengaduan}"
+            >Pengaduan</a
+          >
+          <a
+            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+            th:href="@{/panda/konsultasi}"
+            >Konsultasi</a
+          >
+          <a
+            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+            th:href="@{/panda/login}"
+            >Logout</a
+          >
         </div>
       </nav>
 
-      <div class="row">
-        <!-- Main Content -->
-        <main class="col-md-12 py-3" th:insert="${content}"></main>
-      </div>
+      <!-- Content -->
+      <main th:insert="${content}" class="bg-white p-8"></main>
 
       <!-- Footer -->
-      <footer class="text-white text-center py-3">
-        <p>&copy; 2023 PANDA</p>
+      <footer class="footer bg-blue-500 text-white text-center h-20 p-7">
+        <p>Copyright &copy; Rekayasa Perangkat Lunak 3B Kelompok 3</p>
       </footer>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- DataTables JS -->
-    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#dataTable").DataTable({
-          searching: true, // Enable search feature
-        });
-      });
-
-      //       function logout() {
-      //   // Tampilkan sweetalert
-      //   Swal.fire({
-      //     title: 'Konfirmasi Logout',
-      //     text: 'Apakah Anda yakin ingin logout?',
-      //     icon: 'warning',
-      //     showCancelButton: true,
-      //     confirmButtonColor: '#3085d6',
-      //     cancelButtonColor: '#d33',
-      //     confirmButtonText: 'Ya',
-      //     cancelButtonText: 'Tidak'
-      //   }).then((result) => {
-      //     // Jika ya, maka logout
-      //     if (result.value) {
-      //       window.location.href = '/logout';
-      //     }
-      //   });
-      // }
-    </script>
-
-    <!-- <script>
-      function logout() {
-        // Tampilkan sweetalert
-        Swal.fire({
-          title: "Konfirmasi Logout",
-          text: "Apakah Anda yakin ingin logout?",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Ya",
-          cancelButtonText: "Tidak",
-        }).then((result) => {
-          // Jika ya, maka logout
-          if (result.value) {
-            window.location.href = "/login";
-          }
-        });
-      }
-    </script> -->
   </body>
 </html>

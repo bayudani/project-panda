@@ -15,6 +15,8 @@ import com.finalproject.panda.Service.UserService;
 import com.finalproject.panda.model.Pengaduan;
 import com.finalproject.panda.model.User;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/panda")
 public class PengaduanController {
@@ -26,26 +28,31 @@ public class PengaduanController {
 
     // get form pengaduan
     @GetMapping("/pengaduan")
-    public String formPengaduan(Model model, User user ) {
+    public String formPengaduan(Model model, User user, HttpSession session) {
         try {
             Pengaduan pengaduan = new Pengaduan();
-            log.info(user.getNama_lengkap() +" disini");
-            model.addAttribute("pengaduan", pengaduan);
+            User loggedInUser = (User) session.getAttribute("loggedInUser");
+            if (loggedInUser != null) {
+                log.info(loggedInUser.getNama_lengkap() +" disini");
+                model.addAttribute("pengaduan", pengaduan);
+                model.addAttribute("loggedInUser", loggedInUser);
+                return "PengaduanPage";
+            } else {
+                return "redirect:/panda/login";
+            }
         } catch (Exception e) {
-
+            return "error"; 
         }
-        return "PengaduanPage";
     }
 
     // set pengaduan ke db
     @PostMapping("/pengaduan")
     public String savePengaduan(Model model, Pengaduan pengaduan) {
         try {
-            
             pengaduanService.savePengaduan(pengaduan);
             model.addAttribute("pengaduan", pengaduan);
         } catch (Exception e) {
-
+            
         }
         return "redirect:/";
     }
@@ -55,5 +62,4 @@ public class PengaduanController {
         pengaduanService.deletePengaduan(id_registrasi);
         return "redirect:/";
     }
-
 }
