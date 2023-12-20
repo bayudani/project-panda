@@ -10,6 +10,6 @@ public class KonsultasiController {
     
     @GetMapping("/konsultasi")
     public String getKonsultasi(){
-        return "KonsultasiPage";
+        return "User/KonsultasiPage";
     }
 }

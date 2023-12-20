@@ -13,6 +13,6 @@ public class PandaApplication {
 
 	@RequestMapping("/")
 	public String home(){
-		return "User/Index";
+		return "Index";
 	}
 }

@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("/login")
     public String login() {
-        return "LoginPage";
+        return "User/LoginPage";
     }
 
     @PostMapping("/login")
@@ -50,7 +50,7 @@ public class UserController {
         } catch (Exception e) {
             // Handle exceptions
         }
-        return "DaftarPage";
+        return "User/DaftarPage";
     }
 
     @PostMapping("/daftar")

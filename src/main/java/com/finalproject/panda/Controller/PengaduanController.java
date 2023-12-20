@@ -36,7 +36,7 @@ public class PengaduanController {
                 log.info(loggedInUser.getNama_lengkap() +" disini");
                 model.addAttribute("pengaduan", pengaduan);
                 model.addAttribute("loggedInUser", loggedInUser);
-                return "PengaduanPage";
+                return "User/PengaduanPage";
             } else {
                 return "redirect:/panda/login";
             }
