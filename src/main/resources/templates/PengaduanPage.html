@@ -28,15 +28,15 @@
 
 <body class="bg-gray-100">
     <!-- Navbar start -->
-    <nav class="navbar flex justify-between items-center p-3 bg-blue-500 text-white">
+    <nav class="navbar flex justify-between items-center p-3 bg-blue-300 text-white h-100">
         <a href="#" class="navbar-brand">
             <img src="/img/logo3coy.png" alt="logo" width="180" />
         </a>
         <div class="navbar-nav flex">
-            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/}">Home</a>
-            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/panda/pengaduan}">pengaduan</a>
-            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/panda/konsultasi}">Konsultasi</a>
-            <a class="nav-link px-4 hover:bg-white hover:text-blue-500" th:href="@{/panda/login}">Logout</a>
+            <a class="nav-link px-4 hover:bg-white hover\:border-black hover:text-blue-100" th:href="@{/}">Home</a>
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-100" th:href="@{/panda/pengaduan}">pengaduan</a>
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-100" th:href="@{/panda/konsultasi}">Konsultasi</a>
+            <a class="nav-link px-4 hover:bg-white hover:text-blue-100" th:href="@{/panda/login}">Logout</a>
         </div>
     </nav>
     <!-- Navbar end -->
@@ -129,6 +129,9 @@
         </div>
     </div>
     <!-- Form end -->
+    <footer class="bg-blue-500 p-4 text-white text-center ">
+        <p >&copy; 2023 Pengaduan System. All rights reserved.</p>
+    </footer>
 
     <script>
         function submitForm() {
