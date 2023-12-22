@@ -1,70 +1,48 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  th:fragment="layout (title, content, menu)"
-  xmlns:th="http://www.thymeleaf.org"
->
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+<html lang="en" th:fragment="layout (title, content, menu)" xmlns:th="http://www.thymeleaf.org">
 
-    <title>Pengaduan</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
+  <title th:replace="${title}">Pengaduan</title>
+  
+</head>
 
-  </head>
+<body class="bg-gray-100">
+  <div class="container-fluid">
+    <nav class="navbar flex justify-between items-center p-4 bg-blue-500 text-white h-36">
+      <a href="#" class="navbar-brand text-2xl font-bold">
+        <img src="/img/logo3coy.png" style="filter:brightness(0) invert(1); " alt="logo" width="180" />
+      </a>
+      <div class="navbar-nav flex space-x-4">
+        <a class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+          th:href="@{/}">Home</a>
+        <a class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+          th:href="@{/panda/pengaduan}">Pengaduan</a>
+        <a class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+          th:href="@{/panda/konsultasi}">Konsultasi</a>
+        <a class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
+          th:href="@{/panda/login}">Logout</a> 
+      </div>
+    </nav>
 
-  <body class="bg-gray-100">
-    <div class="container-fluid">
-     
-      <nav
-        class="navbar flex justify-between items-center p-4 bg-blue-500 text-white h-36"
-      >
-        <a href="#" class="navbar-brand text-2xl font-bold">
-          <img src="/img/logo3coy.png" alt="logo" width="180" />
-        </a>
-        <div class="navbar-nav flex space-x-4">
-          <a
-            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-            th:href="@{/}"
-            >Home</a
-          >
-          <a
-            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-            th:href="@{/panda/pengaduan}"
-            >Pengaduan</a
-          >
-          <a
-            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-            th:href="@{/panda/konsultasi}"
-            >Konsultasi</a
-          >
-          <a
-            class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-            th:href="@{/panda/login}"
-            >Logout</a
-          >
-        </div>
-      </nav>
+    <!-- Content -->
+    <main th:insert="${content}" class="bg-white p-8"></main>
 
+    <!-- Footer -->
+    <footer class="footer bg-blue-500 text-white text-center h-20 p-7">
+      <p>&copy; Rekayasa Perangkat Lunak 3B Kelompok 1 2023.</p>
+    </footer>
+  </div>
 
-      <!-- Content -->
-      <main th:insert="${content}" class="bg-white p-8"></main>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenu.classList.toggle("hidden");
+    }
+  </script>
+</body>
 
-      <!-- Footer -->
-      <footer class="footer bg-blue-500 text-white text-center h-20 p-7">
-        <p>Copyright &copy; Rekayasa Perangkat Lunak 3B Kelompok 1</p>
-      </footer>
-    </div>
-
-    <script>
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobileMenu");
-        mobileMenu.classList.toggle("hidden");
-      }
-    </script>
-  </body>
 </html>
