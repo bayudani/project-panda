@@ -7,23 +7,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- tailwind -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <!-- boostrap -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    /> -->
-    <!-- cdn datatble -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
-    />
 
-    <title>Pengaduan</title>
+    <title th:replace="${title}">Pengaduan</title>
   </head>
 
   <body class="bg-gray-100">
@@ -32,13 +21,18 @@
         class="navbar flex justify-between items-center p-4 bg-blue-500 text-white h-36"
       >
         <a href="#" class="navbar-brand text-2xl font-bold">
-          <img src="/img/logo3coy.png" alt="logo" width="180" />
+          <img
+            src="/img/logo3coy.png"
+            style="filter: brightness(0) invert(1)"
+            alt="logo"
+            width="180"
+          />
         </a>
         <div class="navbar-nav flex space-x-4">
           <a
             class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-            th:href="@{/panda/profile}"
-            >Profile</a
+            th:href="@{/}"
+            >Home</a
           >
           <a
             class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
@@ -64,13 +58,13 @@
 
       <!-- Footer -->
       <footer class="footer bg-blue-500 text-white text-center h-20 p-7">
-        <p>Copyright &copy; Rekayasa Perangkat Lunak 3B Kelompok 1</p>
+        <p>&copy; Rekayasa Perangkat Lunak 3B Kelompok 1 2023.</p>
       </footer>
     </div>
 
     <script>
       function confirmLogout() {
-        if (confirm("Apakah Anda yakin ingin logout?")) {
+        if (confirm("apakah anda yakin ingin keluar?")) {
           return true;
         } else {
           return false;
@@ -78,17 +72,11 @@
       }
     </script>
 
-    <!-- boostrap js -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- DataTables JS -->
-    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $("#dataTable").DataTable({
-          searching: true, // Enable search feature
-        });
-      });
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
     </script>
   </body>
 </html>
