@@ -11,7 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +29,7 @@ public class Pengaduan {
 
     private LocalDateTime created_at;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_nik")
     private User user;
 
@@ -48,13 +47,12 @@ public class Pengaduan {
     @JoinColumn(name = "status_id")
     private Status status;
 
-    public void setCreated_at(){
+    public void setCreated_at() {
         this.created_at = LocalDateTime.now();
     }
 
-    public LocalDateTime getCreated_at(){
+    public LocalDateTime getCreated_at() {
         return created_at;
     }
 
-   
 }

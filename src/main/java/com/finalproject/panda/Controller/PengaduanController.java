@@ -33,7 +33,7 @@ public class PengaduanController {
             Pengaduan pengaduan = new Pengaduan();
             User loggedInUser = (User) session.getAttribute("loggedInUser");
             if (loggedInUser != null) {
-                log.info(loggedInUser.getNama_lengkap() +" disini");
+                log.info(loggedInUser.getNama_lengkap() + " disini");
                 model.addAttribute("pengaduan", pengaduan);
                 model.addAttribute("loggedInUser", loggedInUser);
                 return "User/PengaduanPage";
@@ -41,18 +41,21 @@ public class PengaduanController {
                 return "redirect:/panda/login";
             }
         } catch (Exception e) {
-            return "error"; 
+            return "error";
         }
     }
 
     // set pengaduan ke db
     @PostMapping("/pengaduan")
-    public String savePengaduan(Model model, Pengaduan pengaduan) {
+    public String savePengaduan(Model model, HttpSession session, Pengaduan pengaduan) {
         try {
-            pengaduanService.savePengaduan(pengaduan);
-            model.addAttribute("pengaduan", pengaduan);
+            User loggedInUser = (User) session.getAttribute("loggedInUser");
+            if (loggedInUser != null) {
+                pengaduanService.savePengaduan(pengaduan, loggedInUser);
+                model.addAttribute("pengaduan", pengaduan);
+            }
         } catch (Exception e) {
-            
+
         }
         return "redirect:/";
     }

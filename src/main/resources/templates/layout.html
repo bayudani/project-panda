@@ -12,18 +12,14 @@
       rel="stylesheet"
     />
 
-    <title th:replace="${title}">Pengaduan</title>
+    <title>Pengaduan</title>
 
-    <style>
-      .navbar-brand img {
-        filter: brightness(0) invert(1); /* Invert logo color for better visibility on dark background */
-      }
-    </style>
+
   </head>
 
   <body class="bg-gray-100">
     <div class="container-fluid">
-      <!-- Navbar -->
+     
       <nav
         class="navbar flex justify-between items-center p-4 bg-blue-500 text-white h-36"
       >
@@ -38,7 +34,6 @@
           >
           <a
             class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-             
             th:href="@{/panda/pengaduan}"
             >Pengaduan</a
           >
@@ -55,13 +50,21 @@
         </div>
       </nav>
 
+
       <!-- Content -->
       <main th:insert="${content}" class="bg-white p-8"></main>
 
       <!-- Footer -->
       <footer class="footer bg-blue-500 text-white text-center h-20 p-7">
-        <p>Copyright &copy; Rekayasa Perangkat Lunak 3B Kelompok 3</p>
+        <p>Copyright &copy; Rekayasa Perangkat Lunak 3B Kelompok 1</p>
       </footer>
     </div>
+
+    <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
+    </script>
   </body>
 </html>
