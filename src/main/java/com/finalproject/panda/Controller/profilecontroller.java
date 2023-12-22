@@ -14,4 +14,8 @@ public class profilecontroller {
         return "User/profileuser";
     }
     
+    @GetMapping("/riwayatP")
+    public String  riwayat (){
+        return "user/riwayatPengaduan";
+    }
 }

@@ -20,6 +20,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
+    />
+
     <title th:replace="${title}">Document</title>
 
     <style>
@@ -119,7 +125,9 @@
               <a class="nav-link active" th:href="@{/panda/profile}" href="#"
                 >Profile</a
               >
-              <a class="nav-link" href="#">Riwayat pengaduan</a>
+              <a class="nav-link" th:href="@{/panda/riwayatP}" href="#"
+                >Riwayat pengaduan</a
+              >
               <a class="nav-link" href="#">Riwayat konsultasi</a>
             </div>
           </div>
@@ -136,5 +144,16 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#dataTable").DataTable({
+          searching: true, // Enable search feature
+        });
+      });
+    </script>
   </body>
 </html>
