@@ -15,4 +15,6 @@ public class PandaApplication {
 	public String home(){
 		return "Index";
 	}
+
+	
 }

@@ -62,4 +62,10 @@ public class PengaduanController {
         pengaduanService.deletePengaduan(id_registrasi);
         return "redirect:/";
     }
+
+    // @GetMapping ("/edit")
+    // public String editForm (@RequestParam("id_registrasi")Integer idRegistrasi, Model model){
+    //     Pengaduan pengaduan = pengaduanService.findById(id_registrasi).orELse(null);
+    //     return "riwayatPengaduan";
+    // }
 }

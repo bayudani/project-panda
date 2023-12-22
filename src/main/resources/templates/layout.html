@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
 
+    
+
     <title th:replace="${title}">Pengaduan</title>
 
     <style>
@@ -38,7 +40,6 @@
           >
           <a
             class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-             
             th:href="@{/panda/pengaduan}"
             >Pengaduan</a
           >
@@ -49,7 +50,8 @@
           >
           <a
             class="text-lg transition duration-500 ease-in-out hover:text-blue-500 hover:bg-white cursor-pointer px-4 py-2"
-            th:href="@{/panda/login}"
+            th:href="@{/panda/login?logout=true}"
+            onclick="return confirmLogout()"
             >Logout</a
           >
         </div>
@@ -63,5 +65,15 @@
         <p>Copyright &copy; Rekayasa Perangkat Lunak 3B Kelompok 3</p>
       </footer>
     </div>
+
+    <script>
+      function confirmLogout() {
+        if (confirm("Apakah Anda yakin ingin logout?")) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>

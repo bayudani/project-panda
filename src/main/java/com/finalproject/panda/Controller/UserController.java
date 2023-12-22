@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.finalproject.panda.Service.UserService;
 import com.finalproject.panda.model.User;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -63,4 +64,15 @@ public class UserController {
         }
         return "redirect:/panda/login";
     }
+
+  @GetMapping("/logout")
+  public String logout(HttpServletRequest request) {
+    // Periksa apakah permintaan berasal dari konfirmasi logout
+    if (request.getParameter("logout") != null) {
+      // Membatalkan sesi untuk menghapus data pengguna
+      request.getSession().invalidate();
+    }
+    return "redirect:/panda/login";
+  }
+
 }
