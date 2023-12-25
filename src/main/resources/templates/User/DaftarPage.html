@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -41,8 +41,8 @@
         }
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container mt-5 shadow-lg p-4">
       <img
         src="../static/img/Panda.png"
@@ -52,38 +52,86 @@
       />
       <h2 class="text-center font-weight-bold">Registrasi</h2>
       <!-- Tambahkan enctype="multipart/form-data" pada tag form -->
-      <form th:action="@{/panda/daftar}" th:object="${user}" method="post" enctype="multipart/form-data">
+      <form
+        th:action="@{/panda/daftar}"
+        th:object="${user}"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <div class="form-group">
-            <label for="namaLengkap">Nama Lengkap:</label>
-            <input type="text" class="form-control" id="namaLengkap" th:field="*{nama_lengkap}" placeholder="Ketik disini" required/>
+          <label for="namaLengkap">Nama Lengkap:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="namaLengkap"
+            th:field="*{nama_lengkap}"
+            placeholder="Ketik disini"
+            required
+          />
         </div>
         <div class="form-group">
-            <label for="nik">NIK:</label>
-            <input type="text" class="form-control" id="nik" th:field="*{nik}" placeholder="Ketik disini" required/>
+          <label for="nik">NIK:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nik"
+            th:field="*{nik}"
+            placeholder="Ketik disini"
+            required
+          />
         </div>
         <div class="form-group">
-            <label for="alamat">Alamat:</label>
-            <input type="text" class="form-control" id="alamat" th:field="*{alamat}" placeholder="Ketik disini" required/>
+          <label for="alamat">Alamat:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="alamat"
+            th:field="*{alamat}"
+            placeholder="Ketik disini"
+            required
+          />
         </div>
         <div class="form-group">
-            <label for="nomor_hp">Nomor Telpon / Ponsel:</label>
-            <input type="text" class="form-control" id="nomor_hp" th:field="*{nomor_hp}" placeholder="Ketik disini" required/>
+          <label for="nomor_hp">Nomor Telpon / Ponsel:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nomor_hp"
+            th:field="*{nomor_hp}"
+            placeholder="Ketik disini"
+            required
+          />
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" th:field="*{password}" placeholder="Ketik disini" required/>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            th:field="*{password}"
+            placeholder="Ketik disini"
+            required
+          />
         </div>
         <div class="form-group">
-            <label for="fotoFile">Foto:</label>
-            <input type="file" class="form-control-file" id="fotoFile" name="fotoFile" accept="image/*" required/>
+          <label for="fotoFile">Foto:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="fotoFile"
+            name="fotoFile"
+            accept="image/*"
+            required
+          />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Registrasi</button>
-    </form>
-    
+        <button type="submit" class="btn btn-primary btn-block">
+          Registrasi
+        </button>
+      </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
