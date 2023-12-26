@@ -66,7 +66,6 @@ public class UserController {
             userService.saveUser(users);
             model.addAttribute("user", users);
         } catch (Exception e) {
-            // Tangani pengecualian
             e.printStackTrace();
         }
         return "redirect:/panda/login";
@@ -74,9 +73,7 @@ public class UserController {
 
   @GetMapping("/logout")
   public String logout(HttpServletRequest request) {
-    // Periksa apakah permintaan berasal dari konfirmasi logout
     if (request.getParameter("logout") != null) {
-      // Membatalkan sesi untuk menghapus data pengguna
       request.getSession().invalidate();
     }
     return "redirect:/panda/login";

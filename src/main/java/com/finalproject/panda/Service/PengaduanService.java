@@ -65,4 +65,13 @@ public class PengaduanService {
 
         return null;
     }
+
+    public List<Pengaduan> getPengaduanByNik(String nik){
+        if(nik != null){
+            return pengaduanRepo.getByUserNik(nik);
+        }
+
+        return null;
+        
+    }
 }
