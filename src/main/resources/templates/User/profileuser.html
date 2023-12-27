@@ -22,7 +22,7 @@
     />
     <title>Profile</title>
   </head>
-  
+
   <body>
     <div class="container-xl px-4 mt-4" id="content">
       <hr class="mt-0 mb-4" />
@@ -101,7 +101,7 @@
                 <!-- Form Row-->
                 <div class="mb-3">
                   <!-- Form Group (phone number)-->
-                  <label class="small mb-1" for="NomorHP">Phone number</label>
+                  <label class="small mb-1" for="NomorHP">No hp</label>
                   <input
                     style="background-color: #fff"
                     class="form-control"
@@ -112,13 +112,115 @@
                   />
                 </div>
                 <!-- Save changes button-->
-                <a
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Edit profile
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Edit Profile
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card-body ">
+                          <form>
+                            <!-- nik-->
+                            <div class="mb-3">
+                              <label class="small mb-1" for="NIk">NIK</label>
+                              <input
+                                style="background-color: #fff"
+                                class="form-control"
+                                id="NIk"
+                                type="text"
+                                th:placeholder="${user.nik}"
+                                readonly
+                              />
+                            </div>
+                            <!-- Form Row-->
+                            <div class="mb-3">
+                              <!-- naam lengkap)-->
+                              <label class="small mb-1" for="Nama_lengkap"
+                                >Nama lengkap</label
+                              >
+                              <input
+                                style="background-color: #fff"
+                                class="form-control"
+                                id="Nama_lengkap"
+                                type="text"
+                              />
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="small mb-1" for="Alamat"
+                                >Alamat</label
+                              >
+                              <input
+                                style="background-color: #fff"
+                                class="form-control"
+                                id="Alamat"
+                                type="email"
+                              />
+                            </div>
+                            <!-- Form Row-->
+                            <div class="mb-3">
+                              <!-- Form Group (phone number)-->
+                              <label class="small mb-1" for="NomorHP"
+                                >No hp</label
+                              >
+                              <input
+                                style="background-color: #fff"
+                                class="form-control"
+                                id="NomorHP"
+                                type="tel"
+                              />
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Simpan perubahan
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <a
                   th:href="@{/panda/editProfile}"
                   class="btn btn-primary"
                   type="button"
                 >
                   Edit
-                </a>
+                </a> -->
               </form>
             </div>
           </div>
