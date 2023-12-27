@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/panda")
-public class ProfileController {
+public class profilecontroller {
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
@@ -35,7 +35,7 @@ public class ProfileController {
                 model.addAttribute("user", loggedInUser);
                 session.setAttribute("loggedInUser", loggedInUser);
 
-                return "User/ProfileUser";
+                return "User/ProfileUser"; 
             } else {
                 log.info("User is null. Redirecting to login page.");
                 return "redirect:/panda/login";
@@ -68,6 +68,11 @@ public class ProfileController {
             log.error("Error in riwayat method", e);
             return "redirect:/panda/login";
         }
+    }
+    
+    @GetMapping("/editProfile")
+    public String editProfile(){
+        return "user/editProfile";
     }
 
 }

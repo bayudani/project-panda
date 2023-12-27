@@ -22,6 +22,7 @@
     />
     <title>Profile</title>
   </head>
+  
   <body>
     <div class="container-xl px-4 mt-4" id="content">
       <hr class="mt-0 mb-4" />
@@ -62,10 +63,12 @@
                 <div class="mb-3">
                   <label class="small mb-1" for="NIk">NIK</label>
                   <input
+                    style="background-color: #fff"
                     class="form-control"
                     id="NIk"
                     type="text"
                     th:placeholder="${user.nik}"
+                    readonly
                   />
                 </div>
                 <!-- Form Row-->
@@ -75,20 +78,24 @@
                     >Nama lengkap</label
                   >
                   <input
+                    style="background-color: #fff"
                     class="form-control"
                     id="Nama_lengkap"
                     type="text"
                     th:placeholder="${user.nama_lengkap}"
+                    readonly
                   />
                 </div>
 
                 <div class="mb-3">
                   <label class="small mb-1" for="Alamat">Alamat</label>
                   <input
+                    style="background-color: #fff"
                     class="form-control"
                     id="Alamat"
                     type="email"
                     th:placeholder="${user.alamat}"
+                    readonly
                   />
                 </div>
                 <!-- Form Row-->
@@ -96,14 +103,20 @@
                   <!-- Form Group (phone number)-->
                   <label class="small mb-1" for="NomorHP">Phone number</label>
                   <input
+                    style="background-color: #fff"
                     class="form-control"
                     id="NomorHP"
                     type="tel"
                     th:placeholder="${user.nomor_hp}"
+                    readonly
                   />
                 </div>
                 <!-- Save changes button-->
-                <a th:href="@{/panda/daftar}" class="btn btn-primary" type="button">
+                <a
+                  th:href="@{/panda/editProfile}"
+                  class="btn btn-primary"
+                  type="button"
+                >
                   Edit
                 </a>
               </form>
